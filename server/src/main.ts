@@ -11,6 +11,11 @@ import app from "./app";
 
 // Get the port from the environment variables
 const port = process.env.APP_PORT;
+const sayHello = "Welcome to Wild Weries !";
+
+app.get("/", ( req , res ) => {
+    res.send(sayHello)
+  })
 
 // Start the server and listen on the specified port
 app
