@@ -2,26 +2,32 @@
 
 import type { RequestHandler } from "express";
 
-const categories = [
-  {
-    id: 1,
-    name: "Comédie",
-  },
-  {
-    id: 2,
-    name: "Science-Fiction",
-  },
-];
+// Import access to data :
+import categoryRepository from "./categoryRepository";
+
+// const categories = [
+//   {
+//     id: 1,
+//     name: "ComedieNotInDatabase",
+//   },
+//   {
+//     id: 2,
+//     name: "Science-Fiction",
+//   },
+// ];
 
 // Declare the actions
 
-const browse: RequestHandler = (req, res) => {
-  res.json(categories);
+const browse: RequestHandler = async (req, res) => {
+  const categoriesFromDB = await categoryRepository.readAll();
+
+  res.json(categoriesFromDB);
 };
 
-const read: RequestHandler = (req, res) => {
+const read: RequestHandler = async (req, res) => {
   const parsedId = Number.parseInt(req.params.id);
-  const category = categories.find((c) => c.id === parsedId);
+  const categoriesFromDB = await categoryRepository.readAll();
+  const category = categoriesFromDB.find((c) => c.id === parsedId);
 
   if (category != null) {
     res.json(category);

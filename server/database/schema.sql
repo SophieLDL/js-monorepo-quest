@@ -35,7 +35,7 @@ values
   (1, "Stuff", 1),
   (2, "Doodads", 1);
 
-  insert into program
+insert into program
   (
     id,
     title,
@@ -64,3 +64,11 @@ values
     2017,
     2
   );
+
+insert into category
+  (
+  name
+  )
+  values  
+  ("Comédie"),
+  ("Science fiction");
