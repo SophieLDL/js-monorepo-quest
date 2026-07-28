@@ -11,6 +11,11 @@ create table item (
   foreign key(user_id) references user(id)
 );
 
+create table category (
+  id int primary key auto_increment not null,
+  name varchar(100) not null
+);
+
 create table program (
   id int primary key auto_increment not null,
   title varchar(100) not null,
@@ -18,12 +23,8 @@ create table program (
   poster varchar(255) not null,
   country varchar(100) not null,
   year int not null,
-  category_id int not null
-);
-
-create table category (
-  id int primary key auto_increment not null,
-  name varchar(100) not null
+  category_id int not null,
+  foreign key(category_id) references category(id)
 );
 
 insert into user(id, email, password)
@@ -35,7 +36,12 @@ values
   (1, "Stuff", 1),
   (2, "Doodads", 1);
 
-  insert into program
+insert into category(name)
+  values  
+  ("Comédie"),
+  ("Science fiction");
+
+insert into program
   (
     id,
     title,
