@@ -5,17 +5,6 @@ import type { RequestHandler } from "express";
 // Import access to data :
 import categoryRepository from "./categoryRepository";
 
-// const categories = [
-//   {
-//     id: 1,
-//     name: "ComedieNotInDatabase",
-//   },
-//   {
-//     id: 2,
-//     name: "Science-Fiction",
-//   },
-// ];
-
 // Declare the actions
 
 const browse: RequestHandler = async (req, res) => {
