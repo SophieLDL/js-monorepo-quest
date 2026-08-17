@@ -10,8 +10,6 @@ function Programs() {
       .then((data) => setPrograms(data));
   }, []);
 
-  console.log(programs);
-
   return (
     <>
       <h1>Series</h1>
