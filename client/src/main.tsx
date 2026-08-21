@@ -9,6 +9,7 @@ import { RouterProvider, createBrowserRouter } from "react-router";
 import App from "./App";
 import ProgramDetails from "./pages/programs/ProgramDetails";
 import ProgramEdit from "./pages/programs/ProgramEdit";
+import ProgramNew from "./pages/programs/ProgramNew";
 import Programs from "./pages/programs/programs";
 
 // Import additional components for new routes
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
   {
     path: "/programs/:id/edit",
     element: <ProgramEdit />,
+  },
+  {
+    path: "/programs/new",
+    element: <ProgramNew />,
   },
   // Try adding a new route! For example, "/about" with an About component
 ]);

@@ -25,6 +25,7 @@ function Programs() {
           <p>Année : {program.year}</p>
         </div>
       ))}
+      <Link to={"/programs/new"}>Ajouter</Link>
     </>
   );
 }
